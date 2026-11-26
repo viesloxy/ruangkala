@@ -1,12 +1,76 @@
-# RuangKala
+<p align="center">
+  <img src="docs/ruangkala-logo.png" alt="RuangKala" width="120" />
+</p>
 
-**Platform Pinjam-Sewa Perlengkapan Antar-Mahasiswa** — kunci tanggal, sewa alat kepanitiaan dari mahasiswa di kampusmu (dan klaster terdekat), tanpa japri berantai.
+<h1 align="center">RuangKala</h1>
+
+<p align="center">
+  <b>Platform Pinjam-Sewa Perlengkapan Antar-Mahasiswa</b><br/>
+  Kunci tanggal, sewa alat kepanitiaan dari mahasiswa di kampusmu (dan klaster terdekat), tanpa japri berantai.
+</p>
+
+<p align="center">
+  <a href="https://www.ruangkala.web.id/"><b>🌐 Live Demo — ruangkala.web.id</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/viesloxy/ruangkala">Repository</a>
+</p>
 
 Prototipe web fungsional (dapat di-deploy) untuk tugas **Kewirausahaan Bidang TI — Kelompok 10, D4 Teknik Informatika, Fakultas Vokasi UNAIR**.
 
-**🌐 Live demo:** https://viesloxy.github.io/ruangkala/
-
 > Status: prototipe demo. Seluruh data disimpan di `localStorage` browser (tanpa backend), sehingga cocok untuk presentasi dan uji coba alur.
+
+---
+
+## 📸 Tangkapan Layar
+
+Diambil langsung dari **[www.ruangkala.web.id](https://www.ruangkala.web.id/)** (desktop 1440×900).
+
+### Guest — Landing, Harga, Panduan, Login
+
+| Landing Page | Harga & Paket |
+|:--:|:--:|
+| ![](docs/screenshots/01-landing.png) | ![](docs/screenshots/02-harga.png) |
+
+| Panduan Demo | Login / Daftar |
+|:--:|:--:|
+| ![](docs/screenshots/03-panduan.png) | ![](docs/screenshots/04-masuk.png) |
+
+### Mahasiswa
+
+| Dashboard Mahasiswa | Katalog Perlengkapan |
+|:--:|:--:|
+| ![](docs/screenshots/05-dashboard-mahasiswa.png) | ![](docs/screenshots/06-katalog.png) |
+
+| Detail & Kunci Tanggal | Checkout & Pembayaran |
+|:--:|:--:|
+| ![](docs/screenshots/07-detail-barang.png) | ![](docs/screenshots/08-checkout.png) |
+
+| Pinjaman Saya | Barang Saya (Mode Pemilik) |
+|:--:|:--:|
+| ![](docs/screenshots/09-pinjaman-saya.png) | ![](docs/screenshots/10-barang-saya.png) |
+
+| Serah-Terima Fisik | Profil & Verifikasi |
+|:--:|:--:|
+| ![](docs/screenshots/11-serah-terima.png) | ![](docs/screenshots/12-profil.png) |
+
+### Ormawa / Kepanitiaan
+
+| Dashboard Ormawa | SPS 2 Termin |
+|:--:|:--:|
+| ![](docs/screenshots/13-dashboard-ormawa.png) | ![](docs/screenshots/14-sps.png) |
+
+| Approval & LPJ | Inventaris Ormawa (R-03) |
+|:--:|:--:|
+| ![](docs/screenshots/15-approval.png) | ![](docs/screenshots/16-inventaris.png) |
+
+| Paket & Langganan | |
+|:--:|:--:|
+| ![](docs/screenshots/17-langganan.png) | |
+
+### Admin Platform
+
+| Dashboard Admin | Keuangan Platform |
+|:--:|:--:|
+| ![](docs/screenshots/18-admin.png) | ![](docs/screenshots/19-keuangan.png) |
 
 ---
 
@@ -139,15 +203,18 @@ Aplikasi adalah SPA statis (output `dist/`) dan memakai **HashRouter**, jadi **t
 ### Vercel
 1. Import repo ini di [vercel.com](https://vercel.com).
 2. Framework preset: **Vite**. Build Command: `npm run build`. Output Directory: `dist`.
-3. Deploy. Selesai.
+3. Deploy.
+4. (Opsional) Hubungkan domain kustom lewat **Settings → Domains**. Produksi saat ini: **https://www.ruangkala.web.id/** (Vercel + domain `ruangkala.web.id`).
+   - Apex `A @ → 76.76.21.21`
+   - `CNAME www → cname.vercel-dns.com`
 
 ### Netlify
 - Build command: `npm run build`
 - Publish directory: `dist`
 
-### GitHub Pages
-Sudah terkonfigurasi otomatis lewat workflow `.github/workflows/deploy.yml` (Actions). Setiap push ke `main` akan build dengan `--base=/ruangkala/` dan deploy ke GitHub Pages.
-- URL: https://viesloxy.github.io/ruangkala/
+### GitHub Pages (mirror)
+Terkonfigurasi otomatis lewat workflow `.github/workflows/deploy.yml` (Actions). Setiap push ke `main` di-build dengan `--base=/ruangkala/` dan di-deploy ke GitHub Pages.
+- URL mirror: https://viesloxy.github.io/ruangkala/
 - Jika mengganti nama repo, sesuaikan `--base=/nama-repo/` di workflow.
 
 ### Cloudflare Pages / static lainnya
