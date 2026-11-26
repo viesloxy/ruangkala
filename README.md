@@ -4,6 +4,8 @@
 
 Prototipe web fungsional (dapat di-deploy) untuk tugas **Kewirausahaan Bidang TI — Kelompok 10, D4 Teknik Informatika, Fakultas Vokasi UNAIR**.
 
+**🌐 Live demo:** https://viesloxy.github.io/ruangkala/
+
 > Status: prototipe demo. Seluruh data disimpan di `localStorage` browser (tanpa backend), sehingga cocok untuk presentasi dan uji coba alur.
 
 ---
@@ -144,8 +146,9 @@ Aplikasi adalah SPA statis (output `dist/`) dan memakai **HashRouter**, jadi **t
 - Publish directory: `dist`
 
 ### GitHub Pages
-1. Set `base` di `vite.config.ts` sesuai nama repo, mis. `base: '/ruangkala/'`.
-2. Build lalu publish folder `dist` (mis. via `gh-pages`). Karena HashRouter, routing tetap aman tanpa `404.html` khusus.
+Sudah terkonfigurasi otomatis lewat workflow `.github/workflows/deploy.yml` (Actions). Setiap push ke `main` akan build dengan `--base=/ruangkala/` dan deploy ke GitHub Pages.
+- URL: https://viesloxy.github.io/ruangkala/
+- Jika mengganti nama repo, sesuaikan `--base=/nama-repo/` di workflow.
 
 ### Cloudflare Pages / static lainnya
 - Build: `npm run build` · Output: `dist`.
